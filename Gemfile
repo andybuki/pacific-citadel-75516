@@ -54,3 +54,4 @@ gem 'geocoder', '~> 1.4.9'
 gem 'jquery-ui-rails', '~> 6.0.1'
 
 gem 'ransack', '~> 1.8.8'
+gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
