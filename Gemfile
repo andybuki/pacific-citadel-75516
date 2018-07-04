@@ -1,40 +1,48 @@
 source 'https://rubygems.org'
-ruby '>= 2.3.5', '< 2.6'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
-gem 'rails_12factor', group: :production
-# Use SCSS for stylesheets
-gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
-# Use jquery as the JavaScript library
+ruby '2.5.1'
+
+gem 'rails', '~> 5.2.0'
+gem 'sqlite3'
+gem 'puma', '~> 3.11.4'
+gem 'sass-rails', '~> 5.0.7'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.2.2'
+
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc',          group: :doc
+gem 'turbolinks', '~> 5.1.1'
+gem 'jbuilder', '~> 2.7.0'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development, :test do
+  gem 'byebug', platform: :mri
+end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.1'
+end
 
-gem 'puma'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'devise', '~> 4.4.3'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'toastr-rails', '~> 1.0.3'
 
+gem 'omniauth', '~> 1.8.1'
+gem 'omniauth-facebook', '~> 5.0.0'
+
+gem 'paperclip', '~> 6.0.0'
+gem 'aws-sdk', '~> 3.0.1'
+
+gem 'geocoder', '~> 1.4.9'
+gem 'jquery-ui-rails', '~> 6.0.1'
+
+gem 'ransack', '~> 1.8.8'
